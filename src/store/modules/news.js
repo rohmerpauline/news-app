@@ -1,15 +1,13 @@
-/* import NewsService from '@/services/NewsService.js';
+import NewsService from '@/services/NewsService.js';
 
 export const namespaced = true
 
 export const state = {
-    articles: [],
+    articles: []
 }
 
-export const mutations = {
-    SET_NEWS(state, articles){
-        state.articles = articles;
-    },
+export const getters = {
+
 }
 
 export const actions = {
@@ -21,5 +19,20 @@ export const actions = {
         .catch(error => {
             console.log('There was an error:' + error.response)
         })
-    }
-} */
+    },
+    getVueNews({ commit }){
+        return NewsService.getVueNews()
+        .then(response => {
+            commit('GET_NEWS_VUE', response.data);
+        })
+        .catch(error => {
+            console.log('There was an error:' + error.response)
+        })
+    },
+}
+
+export const mutations = {
+  SET_NEWS(state, articles){
+      state.articles = articles;
+  },
+}
