@@ -6,10 +6,6 @@ Creation of a News website, fetching the top news from the [News API](https://ne
 
 ![image2](src/assets/images/capture2.png)
 
-![image3](src/assets/images/capture3.png)
-
-![image4](src/assets/images/capture4.png)
-
 ## Mission objectives 
 
 To discover the Vuejs framework and develop a first small project with it to discover its features and how it works. 
