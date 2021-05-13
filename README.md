@@ -2,13 +2,13 @@
 
 Creation of a News website, fetching the top news from the [News API](https://newsapi.org/) in different categories. 
 
-![image1](src/assets/images/Capture d’écran 2021-05-13 à 14.32.55.png)
+![Image1](src/assets/images/capture1.png)
 
-![image2](src/assets/images/Capture d’écran 2021-05-13 à 14.33.10.png)
+![image2](src/assets/images/capture2.png)
 
-![image3](src/assets/images/Capture d’écran 2021-05-13 à 14.34.34.png)
+![image3](src/assets/images/capture3.png)
 
-![image4](src/assets/images/Capture d’écran 2021-05-13 à 14.34.57.png)
+![image4](src/assets/images/capture4.png)
 
 ## Mission objectives 
 
