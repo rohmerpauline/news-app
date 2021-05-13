@@ -42,6 +42,11 @@ article {
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
+    margin-top: 2%;
+}
+
+article:hover{
+    transform: scale(1.02);
 }
 
 h4 { 

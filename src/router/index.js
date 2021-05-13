@@ -1,30 +1,32 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomePage from "../views/HomePage.vue";
-import ArticlePage from "@/views/ArticlePage.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "top-news",
+    path: "/", redirect: '/article/general',
+    name: "home",
     component: HomePage,
   },
   {
-    path: "/article/:title",
+    path: "/article/:category/:title",
     name: "news-details",
-    component: ArticlePage,
+    component: () => import(/* webpackChunkName: "article" */ "@/views/ArticlePage.vue"),
+    },
+  {
+    path: "/article/:category",
+    name: "news",
+    component: () => import(/* webpackChunkName: "news" */ "@/views/News.vue"),
   },
-  /* {
-    path: "/article",
-    name: "news-details",
-    component: NewsDetails,
-  }, */
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
+  
 });
+
 
 export default router;

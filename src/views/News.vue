@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>Top News</h1>
+        <h1 v-if="category != 'general'">{{ category.toUpperCase() }}</h1>
+        <h1 v-else>TOP NEWS</h1>
         <NewsCard v-for="article in articles.articles" :key="article.title" :article = "article"/>
     </div>
 </template>
@@ -11,18 +12,23 @@ import { mapState, mapActions } from 'vuex';
 import NewsCard from "@/components/NewsCard.vue";
 
 export default {
+    data(){
+        return { 
+            category: this.$route.params.category,
+        }
+    },
     components: {
         NewsCard
+    },
+    mounted() {
+        return this.getNews(this.category)
     },
     computed: {
         ...mapState('news', ['articles']),
     },
-    mounted() {
-        this.getNews()
-    },
     methods: {
-        ...mapActions('news', ['getNews'])
-    }
+        ...mapActions('news', ['getNews']),
+  },
 }
 </script>
 

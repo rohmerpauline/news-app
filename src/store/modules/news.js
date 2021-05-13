@@ -11,19 +11,10 @@ export const getters = {
 }
 
 export const actions = {
-    getNews({ commit }){
-        return NewsService.getTopNews()
+    getNews({ commit }, category){
+        return NewsService.getTopNews(category)
         .then(response => {
             commit('SET_NEWS', response.data);
-        })
-        .catch(error => {
-            console.log('There was an error:' + error.response)
-        })
-    },
-    getVueNews({ commit }){
-        return NewsService.getVueNews()
-        .then(response => {
-            commit('GET_NEWS_VUE', response.data);
         })
         .catch(error => {
             console.log('There was an error:' + error.response)
@@ -33,6 +24,6 @@ export const actions = {
 
 export const mutations = {
   SET_NEWS(state, articles){
-      state.articles = articles;
+      return state.articles = articles;
   },
 }

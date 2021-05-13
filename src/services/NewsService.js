@@ -1,18 +1,11 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL : 'https://newsapi.org/v2',
+    baseURL : 'https://newsapi.org/v2'
 })
 
 export default {
-    getTopNews(){
-        return apiClient.get('/top-headlines?country=gb&apiKey=a682a156d5584ceea6bd0d3a142626e3')
-    },
-    getTopicNews(){
-        return apiClient.get('/top-headlines?country=us&apiKey=a682a156d5584ceea6bd0d3a142626e3')
-    },
-    getVueNews(){
-        return apiClient.get('/everything?q=vuejss&apiKey=a682a156d5584ceea6bd0d3a142626e3')
+    getTopNews(category){
+        return apiClient.get('/top-headlines?country=us&category='+category+'&apiKey=b9c2bdafad044816add03157ed146b59')
     }
-    /* ?domains=techcrunch.com */
 }
